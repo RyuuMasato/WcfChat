@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  chathost:
+    image: chathost
+    build:
+      context: .\ChatHost
+      dockerfile: Dockerfile

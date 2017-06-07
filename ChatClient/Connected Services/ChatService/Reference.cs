@@ -20,6 +20,18 @@ namespace ChatClient.ChatService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/PostNote", ReplyAction="http://tempuri.org/IChatService/PostNoteResponse")]
         System.Threading.Tasks.Task PostNoteAsync(string from, string note);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/CreateUser", ReplyAction="http://tempuri.org/IChatService/CreateUserResponse")]
+        void CreateUser(string nm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/CreateUser", ReplyAction="http://tempuri.org/IChatService/CreateUserResponse")]
+        System.Threading.Tasks.Task CreateUserAsync(string nm);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LoginUser", ReplyAction="http://tempuri.org/IChatService/LoginUserResponse")]
+        void LoginUser(string nm, string pass);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LoginUser", ReplyAction="http://tempuri.org/IChatService/LoginUserResponse")]
+        System.Threading.Tasks.Task LoginUserAsync(string nm, string pass);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +67,22 @@ namespace ChatClient.ChatService {
         
         public System.Threading.Tasks.Task PostNoteAsync(string from, string note) {
             return base.Channel.PostNoteAsync(from, note);
+        }
+        
+        public void CreateUser(string nm) {
+            base.Channel.CreateUser(nm);
+        }
+        
+        public System.Threading.Tasks.Task CreateUserAsync(string nm) {
+            return base.Channel.CreateUserAsync(nm);
+        }
+        
+        public void LoginUser(string nm, string pass) {
+            base.Channel.LoginUser(nm, pass);
+        }
+        
+        public System.Threading.Tasks.Task LoginUserAsync(string nm, string pass) {
+            return base.Channel.LoginUserAsync(nm, pass);
         }
     }
 }

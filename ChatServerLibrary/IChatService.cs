@@ -13,5 +13,9 @@ namespace ChatServerLibrary
     {
         [OperationContract]
         void PostNote(string from, string note);
+        [OperationContract]
+        void CreateUser(string nm);
+        [OperationContract]
+        void LoginUser(string nm, string pass);
     }
 }
